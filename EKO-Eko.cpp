@@ -19,7 +19,7 @@ signed main()
 		mx=max(a[i],mx);
 	}
 	int lo=0,hi=mx,id=0;
-	while(lo<hi)
+	while(hi<=lo)
 	{
 		int mid=(lo+hi)/2;
 		if(check(mid,a,m,n)==1)
@@ -29,7 +29,10 @@ signed main()
 		else
 			hi=mid-1;
 	}
-	cout<<id<<endl;
-	return 0;
-
+	if(check(hi,a,m,n))
+		cout<<hi<<endl;
+	else if(check(lo,a,m,n))
+		cout<<lo<<endl;
+	else
+		cout<<id<<endl;
 }
